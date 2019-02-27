@@ -1,6 +1,5 @@
 package com.detroitlabs.memeproject.data;
 
-import com.detroitlabs.memeproject.model.Text;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -11,31 +10,33 @@ import java.util.List;
 @Component
 public class TextRepository {
 
-public List<String> memeFirstSentence = new ArrayList<>();
-    public List<String> memeSecondSentence = new ArrayList<>();
+private static final List<String> MEME_FIRST_SENTENCE = Arrays.asList(
+  "That face when ",
+        "That feeling when ",
+        "What had happened was "
+);
 
-public void addWords(){
-    memeFirstSentence.add("That face when ");
-    memeFirstSentence.add("That feeling when ");
-    memeFirstSentence.add("What had happened was ");
-    memeSecondSentence.add("you learned SpringBoot ");
-    memeSecondSentence.add("we forgot to commit ");
-    memeSecondSentence.add("GitHub blew up ");
+
+
+private static final List<String> MEME_SECOND_SENTENCE = Arrays.asList(
+      "you learned SpringBoot",
+      "we forgot to commit",
+      "GitHub blew up"
+);
+
+public String combineSentencesAndReturnMemeText() {
+    Collections.shuffle(MEME_FIRST_SENTENCE);
+    String firstHalf = MEME_FIRST_SENTENCE.get(0);
+    Collections.shuffle(MEME_SECOND_SENTENCE);
+    String secondHalf = MEME_SECOND_SENTENCE.get(0);
+
+    String memeText = firstHalf + secondHalf;
+    return memeText;
 }
 
-public String combineSentencesAndReturnMemeText(){
-Collections.shuffle(memeFirstSentence);
-String firstHalf = memeFirstSentence.get(0);
-Collections.shuffle(memeSecondSentence);
-String secondHalf = memeSecondSentence.get(0);
-
-return firstHalf + secondHalf;
-}
-
 
 
 
 }
-
 
 

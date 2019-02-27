@@ -10,8 +10,8 @@
 
 <div class="gifs container">
     <div class="row">
-        <div th:each="Photo : ${randomfive}" class="col s12 l4">
-                <img th:src="@{|/images/${Photo.name}.jpg|}"/>
+                <img th:src="@{|/images/${Image.name}.jpg|}"/>
+        <p th:text="${Sentence}"></p>
         </div>
     </div>
 </div>
