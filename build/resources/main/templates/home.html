@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
+    <link rel="stylesheet" th:href="@{/app.css}" />
     <meta charset="UTF-8"/>
     <title>Photo Album</title>
 </head>
@@ -8,11 +9,16 @@
 <h1>Meme Generator</h1>
 <h2>From The 80's</h2>
 
-<div class="gifs container">
+<div class="gifscontainer">
     <div class="row">
-                <img th:src="@{|/images/${Image.name}.jpg|}"/>
-        <p th:text="${Sentence}"></p>
-        </div>
+
+
+        <img th:src="@{|/images/${Image.name}.jpg|}"/>
+
+        <div class="top-center"th:text="${Sentence}"></div>
+
+
+    </div>
     </div>
 </div>
 
